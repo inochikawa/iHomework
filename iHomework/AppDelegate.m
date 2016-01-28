@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (void)reastoreData {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"artists"];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"events"];
     self.events = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
     if(!self.events)
@@ -27,7 +27,7 @@
 
 - (void)saveData {
     NSData *data =  [NSKeyedArchiver archivedDataWithRootObject:self.events];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"artists"];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"events"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
