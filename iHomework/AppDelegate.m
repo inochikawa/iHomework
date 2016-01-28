@@ -32,13 +32,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self reastoreData];
+    
     NSLog(@"%s", __PRETTY_FUNCTION__);
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    SMVArtist *art = [[SMVArtist alloc] initDefaultArtist];
-    [self.artists addObject:art];
+    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
@@ -46,26 +46,24 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [self saveData];
+    
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    SMVArtist *art = [[SMVArtist alloc] initDefaultArtist];
-    [self.artists addObject:art];
+    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    SMVArtist *art = [[SMVArtist alloc] initDefaultArtist];
-    [self.artists addObject:art];
+    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    SMVArtist *art = [[SMVArtist alloc] initDefaultArtist];
-    [self.artists addObject:art];
+    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
