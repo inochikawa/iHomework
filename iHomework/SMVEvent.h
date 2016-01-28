@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SMVArtist : NSObject<NSCoding>
+@interface SMVEvent : NSObject<NSCoding>
 
 @property (nonatomic) NSString *eventName;
 @property (nonatomic) NSDate *eventDate;
 @property (nonatomic) NSString *eventId;
 
-- (instancetype)initDefaultArtist;
+- (instancetype)initWithName:(NSString *)name
+                    withDate:(NSDate *)date
+                    withUUID:(NSString *)UUID;
+
 + (NSString *)getUUID;
 
 @end

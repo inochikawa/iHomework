@@ -13,7 +13,7 @@
 		83C0F95B1C5A4178000C9FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C0F9591C5A4178000C9FF8 /* Main.storyboard */; };
 		83C0F95D1C5A4178000C9FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83C0F95C1C5A4178000C9FF8 /* Assets.xcassets */; };
 		83C0F9601C5A4178000C9FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C0F95E1C5A4178000C9FF8 /* LaunchScreen.storyboard */; };
-		83C0F9691C5A4310000C9FF8 /* SMVArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C0F9681C5A4310000C9FF8 /* SMVArtist.m */; };
+		83C0F9691C5A4310000C9FF8 /* SMVEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C0F9681C5A4310000C9FF8 /* SMVEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		83C0F95C1C5A4178000C9FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83C0F95F1C5A4178000C9FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83C0F9611C5A4178000C9FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83C0F9671C5A4310000C9FF8 /* SMVArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVArtist.h; sourceTree = "<group>"; };
-		83C0F9681C5A4310000C9FF8 /* SMVArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMVArtist.m; sourceTree = "<group>"; };
+		83C0F9671C5A4310000C9FF8 /* SMVEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVEvent.h; sourceTree = "<group>"; };
+		83C0F9681C5A4310000C9FF8 /* SMVEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMVEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 				83C0F95E1C5A4178000C9FF8 /* LaunchScreen.storyboard */,
 				83C0F9611C5A4178000C9FF8 /* Info.plist */,
 				83C0F9501C5A4178000C9FF8 /* Supporting Files */,
-				83C0F9671C5A4310000C9FF8 /* SMVArtist.h */,
-				83C0F9681C5A4310000C9FF8 /* SMVArtist.m */,
+				83C0F9671C5A4310000C9FF8 /* SMVEvent.h */,
+				83C0F9681C5A4310000C9FF8 /* SMVEvent.m */,
 			);
 			path = iHomework;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 				83C0F9581C5A4178000C9FF8 /* ViewController.m in Sources */,
 				83C0F9551C5A4178000C9FF8 /* AppDelegate.m in Sources */,
 				83C0F9521C5A4178000C9FF8 /* main.m in Sources */,
-				83C0F9691C5A4310000C9FF8 /* SMVArtist.m in Sources */,
+				83C0F9691C5A4310000C9FF8 /* SMVEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +304,7 @@
 				83C0F9661C5A4178000C9FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

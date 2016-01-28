@@ -6,18 +6,18 @@
 //  Copyright © 2016 2. All rights reserved.
 //
 
-#import "SMVArtist.h"
+#import "SMVEvent.h"
 
-@implementation SMVArtist
+@implementation SMVEvent
 
-- (instancetype)initDefaultArtist {
+- (instancetype)initWithName:(NSString *)eventName withDate:(NSDate *)eventDate withUUID:(NSString *)eventId {
     self = [super init];
     
     if(!self) return nil;
     
-    self.eventName = @"Maksim";
-    self.eventDate = [NSDate date];
-    self.eventId = [SMVArtist getUUID];
+    self.eventName = eventName;
+    self.eventDate = eventDate;
+    self.eventId = eventId;
     
     return self;
 }

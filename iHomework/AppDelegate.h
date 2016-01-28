@@ -10,7 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic) NSMutableArray *artists;
+@property (nonatomic) NSMutableArray *events;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

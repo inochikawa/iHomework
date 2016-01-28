@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SMVArtist.h"
+#import "SMVEvent.h"
 
 @interface AppDelegate ()
 
@@ -17,16 +17,16 @@
 
 - (void)reastoreData {
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"artists"];
-    self.artists = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    self.events = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
-    if(!self.artists)
-        self.artists = [NSMutableArray new];
+    if(!self.events)
+        self.events = [NSMutableArray new];
     
     NSLog(@"Data restored");
 }
 
 - (void)saveData {
-    NSData *data =  [NSKeyedArchiver archivedDataWithRootObject:self.artists];
+    NSData *data =  [NSKeyedArchiver archivedDataWithRootObject:self.events];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"artists"];
 }
 
@@ -38,7 +38,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
+    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
@@ -51,19 +51,19 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
+    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
+    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.artists addObject:[[SMVArtist alloc] initDefaultArtist]];
+    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
