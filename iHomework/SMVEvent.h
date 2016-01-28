@@ -15,8 +15,7 @@
 @property (nonatomic) NSString *eventId;
 
 - (instancetype)initWithName:(NSString *)name
-                    withDate:(NSDate *)date
-                    withUUID:(NSString *)UUID;
+                    withDate:(NSDate *)date;
 
 + (NSString *)getUUID;
 

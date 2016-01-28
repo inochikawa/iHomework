@@ -15,7 +15,7 @@
 
 @implementation AppDelegate
 
-- (void)reastoreData {
+- (void)restoreData {
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"events"];
     self.events = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
@@ -31,14 +31,16 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self reastoreData];
+    [self restoreData];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
+    SMVEvent *event = [[SMVEvent alloc] initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+                                            withDate:[NSDate date]];
+    [self.events addObject:event];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
@@ -51,19 +53,25 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
+    SMVEvent *event = [[SMVEvent alloc] initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+                                            withDate:[NSDate date]];
+    [self.events addObject:event];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
+    SMVEvent *event = [[SMVEvent alloc] initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+                                            withDate:[NSDate date]];
+    [self.events addObject:event];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.events addObject:[[SMVEvent alloc]initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] withDate:[NSDate date] withUUID:[SMVEvent getUUID]]];
+    SMVEvent *event = [[SMVEvent alloc] initWithName:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+                                            withDate:[NSDate date]];
+    [self.events addObject:event];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }

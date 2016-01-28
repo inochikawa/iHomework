@@ -10,14 +10,14 @@
 
 @implementation SMVEvent
 
-- (instancetype)initWithName:(NSString *)eventName withDate:(NSDate *)eventDate withUUID:(NSString *)eventId {
+- (instancetype)initWithName:(NSString *)eventName withDate:(NSDate *)eventDate {
     self = [super init];
     
     if(!self) return nil;
     
     self.eventName = eventName;
     self.eventDate = eventDate;
-    self.eventId = eventId;
+    self.eventId = [SMVEvent getUUID];
     
     return self;
 }
